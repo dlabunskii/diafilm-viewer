@@ -74,18 +74,45 @@
   <script>
     // Царевич и ковёр. Часть 1
     // На странице указано 28 кадров.
-    const frameCount = 28;
-    const baseUrl = "https://diafilmy.su/uploads/posts/2022-02/1644601395_pict-ck-";
+    const frames = [
+      "https://diafilmy.su/uploads/posts/2022-02/1644601395_pict-ck-01.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601342_pict-ck-02.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601303_pict-ck-03.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601310_pict-ck-04.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601321_pict-ck-05.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601383_pict-ck-06.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601311_pict-ck-07.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601399_pict-ck-08.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601395_pict-ck-09.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601413_pict-ck-10.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601396_pict-ck-11.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601356_pict-ck-12.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601368_pict-ck-13.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601415_pict-ck-14.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601366_pict-ck-15.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601359_pict-ck-16.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601354_pict-ck-17.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601411_pict-ck-18.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601411_pict-ck-19.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601374_pict-ck-20.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601358_pict-ck-21.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601441_pict-ck-22.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601363_pict-ck-23.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601446_pict-ck-24.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601356_pict-ck-25.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601359_pict-ck-26.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601434_pict-ck-27.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601413_pict-ck-28.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601412_pict-ck-29.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601391_pict-ck-30.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601431_pict-ck-31.jpg",
+      "https://diafilmy.su/uploads/posts/2022-02/1644601403_pict-ck-32.jpg"
+    ];
 
-    let current = Number(localStorage.getItem("diafilm-current-frame") || 1);
-    current = Math.min(Math.max(current, 1), frameCount);
-
-    const img = document.getElementById("frame");
-    const counter = document.getElementById("counter");
-    const hint = document.getElementById("hint");
+    const frameCount = frames.length;
 
     function frameUrl(n) {
-      return baseUrl + String(n).padStart(2, "0") + ".jpg";
+      return frames[n - 1];
     }
 
     function showFrame(n) {
