@@ -115,8 +115,6 @@
       img.style.display = "block";
       img.src = frames[current];
       counter.textContent = (current + 1) + " / " + frames.length;
-      message.style.opacity = "1";
-      message.textContent = "Тап справа — дальше, слева — назад";
     }
 
     img.onload = () => {
